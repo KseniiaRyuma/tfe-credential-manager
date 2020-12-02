@@ -30,6 +30,15 @@ resource "tfe_variable" "aws_access_key_id" {
   workspace_id = "${var.organization}/${element(var.workspace_ids, count.index)}"
 }
 
+resource "tfe_variable" "aws_session_token" {
+  count        = "${length(var.workspace_ids)}"
+  key          = "AWS_SESSION_TOKEN"
+  value        = "${var.aws_access_key_id}"
+  category     = "env"
+  sensitive    = true
+  workspace_id = "${var.organization}/${element(var.workspace_ids, count.index)}"
+}
+
 resource "tfe_variable" "arm_subscription_id" {
   count        = "${length(var.workspace_ids)}"
   key          = "ARM_SUBSCRIPTION_ID"
