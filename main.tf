@@ -33,7 +33,7 @@ resource "tfe_variable" "aws_access_key_id" {
 resource "tfe_variable" "aws_session_token" {
   count        = "${length(var.workspace_ids)}"
   key          = "AWS_SESSION_TOKEN"
-  value        = "${var.aws_session_token_id}"
+  value        = "${var.aws_session_token}"
   category     = "env"
   sensitive    = true
   workspace_id = "${var.organization}/${element(var.workspace_ids, count.index)}"
