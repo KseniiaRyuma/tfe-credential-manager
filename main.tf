@@ -10,7 +10,7 @@ provider "tfe" {
 #   category     = "env"
 #   sensitive    = true
 #   workspace_id = "${var.organization}/${element(var.workspace_ids, count.index)}"
-}
+# }
 
 resource "tfe_variable" "aws_secret_access_key" {
   count        = "${length(var.workspace_ids)}"
@@ -55,7 +55,7 @@ resource "tfe_variable" "aws_session_token" {
 #   category     = "env"
 #   sensitive    = true
 #   workspace_id = "${var.organization}/${element(var.workspace_ids, count.index)}"
-}
+# }
 
 # resource "tfe_variable" "arm_tenant_id" {
 #   count        = "${length(var.workspace_ids)}"
@@ -73,7 +73,7 @@ resource "tfe_variable" "aws_session_token" {
 #   category     = "env"
 #   sensitive    = true
 #   workspace_id = "${var.organization}/${element(var.workspace_ids, count.index)}"
-}
+# }
 
 resource "tfe_variable" "env_vars" {
   count        = "${length(var.workspace_ids)}"
