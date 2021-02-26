@@ -7,18 +7,19 @@ variable "workspace_ids" {
   default     = []
 }
 
-variable "gcp_credentials" {}
 
-variable "aws_secret_access_key" {}
+variable "AWS_SECRET_ACCESS_KEY" {}
 
-variable "aws_access_key_id" {}
+variable "AWS_ACCESS_KEY_ID" {}
 
-variable "aws_session_token" {}
+variable "AWS_SESSION_TOKEN" {}
 
-variable "arm_subscription_id" {}
+# variable "arm_subscription_id" {}
 
-variable "arm_client_secret" {}
+# variable "arm_client_secret" {}
 
-variable "arm_tenant_id" {}
+# variable "arm_tenant_id" {}
 
-variable "arm_client_id" {}
+# variable "arm_client_id" {}
+
+# variable "gcp_credentials" {}
